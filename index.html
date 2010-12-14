@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ 
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es"> 
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/> 
+  <meta http-equiv='Content-Language' content='es' />
+  <title>jquery.imageCycle</title> 
+  
+  <style type="text/css">
+  
+    /* Viewport
+    ----------------------------------------------------------------------------------------------------*/
+    * {
+      margin:0;
+      padding:0;
+    }
+    
+    .content_viewport {
+      margin-top:40px;
+    }    
+    
+    .viewport {
+      position:relative;
+      width:900px;
+      height:140px;
+      overflow:hidden;
+    }
+
+    .content_viewport .viewport a.prev,
+    .content_viewport .viewport a.next {
+      position:absolute;
+      width:40px;
+      top:0;
+      text-indent:-99999px;
+      text-align:left;
+      z-index:3;
+      cursor:pointer;
+      height:140px;
+      background: #000;
+      display:block;
+    }
+
+    .content_viewport .viewport a.prev {
+      right:0px;
+    }
+
+    .content_viewport .viewport a.next {
+      left:0px;
+    }
+
+    .content_viewport .viewport a.prev:hover {
+      background: #333;
+      cursor:pointer;
+    }
+
+    .content_viewport .viewport a.next:hover {
+      background: #333;
+      cursor:pointer;
+    }
+
+    .viewport ul.item_wrapper {
+      overflow:hidden;
+      list-style:none;
+      position:absolute;
+      top:0;
+      left:0;
+      z-index:1;
+      height:140px;
+    }
+    
+    .viewport ul.item_wrapper li {
+      float:left;
+      position:relative;
+      height:140px;
+      overflow:hidden;
+      background: url('../images/ajax-loader.gif') no-repeat center center;
+    }
+
+    .viewport ul.item_wrapper li img,
+    .viewport ul.item_wrapper li a{
+      display:block;
+    }
+    
+    .viewport ul.item_wrapper li img {
+      border:none;
+    }
+    
+    .viewport ul.item_wrapper li a {
+      border:none;
+      width:100%;
+    }
+    
+  </style>
+  
+</head> 
+ 
+<body>
+  
+  <div id="content" class="container_9">   
+    <div class="content_viewport"> 
+      <div class="viewport"> 
+        <a href="#" class="prev">Anterior</a> 
+        <a href="#" class="next">Siguiente</a> 
+        <ul class="item_wrapper"> 
+	    	  <li style="width:98px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5344/large/_MG_1891.JPG?1281952447" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5344/thumb/_MG_1891.JPG?1281952447" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5345/large/_MG_1978.JPG?1281952494" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5345/thumb/_MG_1978.JPG?1281952494" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5346/large/_MG_2204.JPG?1281952510" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5346/thumb/_MG_2204.JPG?1281952510" alt="coleccion"/></a></li> 
+	    	  <li style="width:104px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5347/large/_MG_2323.JPG?1281952526" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5347/thumb/_MG_2323.JPG?1281952526" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5348/large/_MG_2476_CAT.jpg?1281952541" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5348/thumb/_MG_2476_CAT.jpg?1281952541" alt="coleccion"/></a></li> 
+	    	  <li style="width:211px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5349/large/_MG_3026.JPG?1281952575" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5349/thumb/_MG_3026.JPG?1281952575" alt="coleccion"/></a></li> 
+	    	  <li style="width:98px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5350/large/_MG_3580.JPG?1281952593" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5350/thumb/_MG_3580.JPG?1281952593" alt="coleccion"/></a></li> 
+	    	  <li style="width:176px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5351/large/_MG_3633.JPG?1281952616" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5351/thumb/_MG_3633.JPG?1281952616" alt="coleccion"/></a></li> 
+	    	  <li style="width:180px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5352/large/_MG_4316.JPG?1281952642" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5352/thumb/_MG_4316.JPG?1281952642" alt="coleccion"/></a></li> 
+	    	  <li style="width:99px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5353/large/_MG_4460.JPG?1281952666" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5353/thumb/_MG_4460.JPG?1281952666" alt="coleccion"/></a></li> 
+	    	  <li style="width:98px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5354/large/_MG_4733.JPG?1281952689" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5354/thumb/_MG_4733.JPG?1281952689" alt="coleccion"/></a></li> 	    	  
+	    	  <li style="width:97px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5355/large/_MG_4843.JPG?1281952709" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5355/thumb/_MG_4843.JPG?1281952709" alt="coleccion"/></a></li> 
+        </ul> 
+      </div><!-- .viewport --> 
+ 
+      <div class="viewport"> 
+        <a href="#" class="prev">Anterior</a> 
+        <a href="#" class="next">Siguiente</a> 
+        <ul class="item_wrapper"> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5356/large/_MG_5370_1_CAT.jpg?1281952728" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5356/thumb/_MG_5370_1_CAT.jpg?1281952728" alt="coleccion"/></a></li> 
+	    	  <li style="width:197px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5357/large/_MG_5461.JPG?1281952756" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5357/thumb/_MG_5461.JPG?1281952756" alt="coleccion"/></a></li> 
+	    	  <li style="width:116px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5358/large/_MG_5514.jpg?1281952814" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5358/thumb/_MG_5514.jpg?1281952814" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5359/large/_MG_5709.JPG?1281952844" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5359/thumb/_MG_5709.JPG?1281952844" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5360/large/_MG_6268.JPG?1281952889" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5360/thumb/_MG_6268.JPG?1281952889" alt="coleccion"/></a></li> 
+	    	  <li style="width:103px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5361/large/_MG_6347.JPG?1281952919" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5361/thumb/_MG_6347.JPG?1281952919" alt="coleccion"/></a></li> 
+	    	  <li style="width:216px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5362/large/_MG_6350.JPG?1281952950" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5362/thumb/_MG_6350.JPG?1281952950" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5364/large/_MG_6366.JPG?1281953026" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5364/thumb/_MG_6366.JPG?1281953026" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5365/large/_MG_6551.JPG?1281953053" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5365/thumb/_MG_6551.JPG?1281953053" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5366/large/_MG_6760.JPG?1281953075" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5366/thumb/_MG_6760.JPG?1281953075" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5367/large/_MG_6823.JPG?1281953114" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5367/thumb/_MG_6823.JPG?1281953114" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5368/large/_MG_7153.JPG?1281953159" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5368/thumb/_MG_7153.JPG?1281953159" alt="coleccion"/></a></li> 
+        </ul> 
+      </div><!-- .viewport --> 
+      
+      <div class="viewport"> 
+        <a href="#" class="prev">Anterior</a> 
+        <a href="#" class="next">Siguiente</a> 
+        <ul class="item_wrapper"> 
+	    	  <li style="width:210px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5369/large/_MG_7327.jpg?1281953289" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5369/thumb/_MG_7327.jpg?1281953289" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5371/large/_MG_7355.jpg?1281953460" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5371/thumb/_MG_7355.jpg?1281953460" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5372/large/_MG_7392__CAT.jpg?1281953482" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5372/thumb/_MG_7392__CAT.jpg?1281953482" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5373/large/_MG_7544.jpg?1281953541" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5373/thumb/_MG_7544.jpg?1281953541" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5374/large/_MG_7805.JPG?1281953570" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5374/thumb/_MG_7805.JPG?1281953570" alt="coleccion"/></a></li> 
+	    	  <li style="width:95px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5375/large/_MG_7963.JPG?1281953594" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5375/thumb/_MG_7963.JPG?1281953594" alt="coleccion"/></a></li> 
+	    	  <li style="width:210px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5376/large/_MG_8226.JPG?1281953637" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5376/thumb/_MG_8226.JPG?1281953637" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5377/large/_MG_8376.JPG?1281953675" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5377/thumb/_MG_8376.JPG?1281953675" alt="coleccion"/></a></li> 
+	    	  <li style="width:200px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5378/large/_MG_8561.JPG?1281953699" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5378/thumb/_MG_8561.JPG?1281953699" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5379/large/_MG_8937.JPG?1281953723" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5379/thumb/_MG_8937.JPG?1281953723" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5380/large/_MG_9038_2_CAT.jpg?1281953742" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5380/thumb/_MG_9038_2_CAT.jpg?1281953742" alt="coleccion"/></a></li> 
+	    	  <li style="width:93px !important;"><a href="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5381/large/_MG_9140.JPG?1281953771" ><img src="http://d3s0i2sspzm03.cloudfront.net/public/system/products/5381/thumb/_MG_9140.JPG?1281953771" alt="coleccion"/></a></li> 	    	
+        </ul> 
+      </div><!-- .viewport --> 
+</div><!-- .content_vi --> 
+ 
+ 
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+ <script src="jquery.imageCycle.js" type="text/javascript" charset="utf-8"></script>
+ 
+  <script type="text/javascript" charset="utf-8"> 
+    $(function() {
+        
+        if($.fn.imageCycle !== undefined) {
+
+            var collectionCarousels = $('.viewport');
+
+            collectionCarousels.eq(0).imageCycle({ 
+              animationOnLoadTime : 4000,
+              animationDirection : 'prev'
+            });
+
+            collectionCarousels.eq(1).imageCycle({ 
+              animationOnLoadTime : 4000,
+              animationDirection : 'next'
+            });
+
+            collectionCarousels.eq(2).imageCycle({ 
+              animationOnLoadTime : 4000,
+              animationDirection : 'prev'
+            });
+
+          };
+        
+    });
+  </script> 
+</body> 
+</html>
